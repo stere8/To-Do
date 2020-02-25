@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ task.name }}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div><h1>{{ task.name }}</h1></div>
+    <p>{{ task.description }}</p>
+    <div>Due date : {{ task.due_date }} </div>
+    <div>
+       <a href="{% url 'finish'  task.id %}" class="btn btn-warning">Done</a>
+       <a href="{% url 'delete'  task.id %}" class="btn btn-danger">Delete</a>
+    </div>
+    </div>
+{% endblock %}
